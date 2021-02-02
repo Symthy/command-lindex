@@ -3,7 +3,7 @@
     <router-link to="/">Index</router-link> |
     <router-link to="/options">Options</router-link>
   </div>
-  <div class="flex justify-center bg-gray-200">
+  <div class="flex-center bg-gray-200">
     <router-view />
   </div>
 </template>

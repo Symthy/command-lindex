@@ -1,12 +1,12 @@
 <template>
-  <div class="max-w-screen-lg w-full bg-gray-200">
+  <div class="flex-center max-w-screen-lg w-full bg-gray-200">
     <IndexList></IndexList>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import IndexList from "@/components/IndexList.vue"; // @ is an alias to /src
+import IndexList from "@/components/ContentsArea.vue"; // @ is an alias to /src
 
 @Options({
   /* eslint-disable */

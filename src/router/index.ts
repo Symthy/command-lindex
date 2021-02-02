@@ -16,10 +16,10 @@ const routes: Array<RouteRecordRaw> = [
     path: "/options",
     name: "Options",
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    // this generates a separate chunk (options.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Options.vue"),
+      import(/* webpackChunkName: "options" */ "../views/Options.vue"),
   },
 ];
 

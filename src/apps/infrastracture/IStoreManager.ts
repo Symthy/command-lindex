@@ -1,6 +1,6 @@
-import { ModelType } from './DdModelType';
+import { ModelType } from './ModelTypes';
 
-export interface IDbManager {
+export interface IStoreManager {
   checkConnect(): void
   getAll<T extends ModelType>(type: T): T[];
 }

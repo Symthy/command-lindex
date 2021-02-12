@@ -1,8 +1,8 @@
-import { ModelType } from '../../DdModelType';
-import { IDbSearcher } from '../../IDataSearcher';
-import { IDbAccessor } from '../../IDbAccessor';
+import { IStoreSearcher } from '../../IStoreSearcher';
+import { IStoreAccessor } from '../../IStoreUpdater';
+import { ModelType } from '../../ModelTypes';
 
-class ServerDbAccessor implements IDbAccessor, IDbSearcher{
+class ServerDbAccessor implements IStoreAccessor, IStoreSearcher{
   insert(query: any): void {
     throw new Error("Method not implemented.");
   }

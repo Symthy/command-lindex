@@ -1,5 +1,5 @@
-import { IDbAccessor } from '../IDbAccessor';
+import { IStoreAccessor } from '../IStoreUpdater';
 
-export interface IResourceRepository extends IDbAccessor {}
+export interface IResourceRepository extends IStoreAccessor {}
 
-export interface ICategoryRepository extends IDbAccessor {}
+export interface ICategoryRepository extends IStoreAccessor {}

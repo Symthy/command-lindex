@@ -1,6 +1,6 @@
-import { IDbAccessor } from '../../IDbAccessor';
+import { IStoreAccessor } from '../../IStoreUpdater';
 
-export class IndexedDBAccessor implements IDbAccessor {
+export class IndexedDBAccessor implements IStoreAccessor {
   insert(query: any): void {
     throw new Error("Method not implemented.");
   }

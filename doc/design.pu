@@ -25,6 +25,8 @@ package Infrastractre {
   DbManager o.> IDbAccessor
   IDbAccessor <..o Repository
   IDbSearcher <..o Repository
+  class Repository
+  note right: ServerDbAccessor\n& DbManager保持
 }
 
 package ApplicationService {
@@ -37,7 +39,6 @@ package Domain {
 }
 
 IDbManager <.. StartupService
-IRepository <..o StartupService
 IRepository <..o ApplicationService
 
 StartupService ..> DomainModel

@@ -1,0 +1,32 @@
+@startuml
+
+Domain <|-- dexie
+
+interface IDbContext
+Domain1 o..> IDbContext
+IDbContext <|.. dexie1
+
+interface IRepository2
+Domain2 o..> IRepository2
+IRepository2 <|.. Repository2
+Repository2 <|-- dexie2
+
+interface IRepository3
+Domain3 o..> IRepository3
+IRepository3 <|.. Repository3
+Repository3 o-- dexie3
+
+interface IRepository4
+interface IDbContext4
+Domain4 o..> IRepository4
+IRepository4 <|.. Repository4
+Repository4 o..> IDbContext4
+IDbContext4 <|.. dexie4
+
+interface IRepository5
+Domain5 o..> IRepository5
+IRepository5 <|.. Repository5
+Repository5 o..> DAO
+DAO <|-- dexie5
+
+@enduml

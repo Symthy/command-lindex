@@ -1,7 +1,7 @@
-import { CodeInfoList } from './CodeInfoList';
+import { ResourceList } from './ResourceList';
 
 export class Categories {
 
-  constructor(private _codeInfoList: CodeInfoList) {}
+  constructor(private _resourceList: ResourceList) {}
 
 }

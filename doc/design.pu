@@ -1,0 +1,49 @@
+@startuml
+
+
+package Infrastractre {
+  interface IRepository
+  interface IDbManager {
+    checkConnect(db)
+    getDataAll()
+  }
+  interface IDbAccessor {
+    insert()
+    delete()
+    update()
+  }
+  interface IDbSearcher {
+    find()
+    findAll()
+  }
+  Repository ..|> IRepository
+  DbManager ..|> IDbAccessor
+  DbManager ..|> IDbManager
+  IndexedDbAccessor ..|> IDbAccessor
+  ServerDbAccessor ..|> IDbAccessor
+  ServerDbAccessor ..|> IDbSearcher
+  DbManager o.> IDbAccessor
+  IDbAccessor <..o Repository
+  IDbSearcher <..o Repository
+}
+
+package ApplicationService {
+  class StartupService
+  class ApplicationService
+}
+
+package Domain {
+  class DomainModel
+}
+
+IDbManager <.. StartupService
+IRepository <..o StartupService
+IRepository <..o ApplicationService
+
+StartupService ..> DomainModel
+ApplicationService ..> DomainModel
+
+View ...> ApplicationService
+View ...> StartupService
+
+@enduml

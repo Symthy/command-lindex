@@ -10,5 +10,4 @@ class ResourceRepository implements IResourceRepository {
   delete(query: any): void {
     throw new Error('Method not implemented.');
   }
-
 }

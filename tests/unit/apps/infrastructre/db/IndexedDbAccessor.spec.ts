@@ -3,6 +3,6 @@ import { IndexedDBAccessor } from '@/apps/infrastracture/db/indexedDb/IndexedDbA
 test('insert', () => {
   const accessor = new IndexedDBAccessor();
   expect(() => {
-    accessor.insert(0)
+    accessor.insert(0);
   }).toThrow('Method not implemented.');
 });

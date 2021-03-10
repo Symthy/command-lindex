@@ -1,6 +1,4 @@
 @startuml
-
-
 package Infrastractre {
   interface IRepository
   interface IDbManager {

@@ -1,10 +1,10 @@
-import { IndexedDBAccessor } from './db/indexedDb/IndexedDbAccessor';
+import { IndexedDBAccessor } from './db/frontDb/IndexedDbAccessor';
 import { IStoreManager } from './IStoreManager';
 import { IStoreAccessor } from './IStoreUpdater';
 import { ModelType } from './ModelTypes';
 
 export class StoreManager implements IStoreManager, IStoreAccessor {
-  private accessors: Array<IStoreAccessor>
+  private accessors: Array<IStoreAccessor>;
   constructor() {
     this.accessors = [new IndexedDBAccessor()];
   }

@@ -1,5 +1,5 @@
 import { IStoreAccessor } from '../IStoreUpdater';
 
-export interface IResourceRepository extends IStoreAccessor {}
+export type IResourceRepository = IStoreAccessor;
 
-export interface ICategoryRepository extends IStoreAccessor {}
+export type ICategoryRepository = IStoreAccessor;

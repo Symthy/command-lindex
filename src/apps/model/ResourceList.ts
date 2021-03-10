@@ -1,3 +1,1 @@
-export class ResourceList {
-
-}
+export class ResourceList {}

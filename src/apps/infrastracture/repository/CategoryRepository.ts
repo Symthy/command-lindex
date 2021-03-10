@@ -1,6 +1,6 @@
 import { ICategoryRepository } from './IRepository';
 
-class CategoryRepository implements ICategoryRepository {
+export class CategoryRepository implements ICategoryRepository {
   insert(query: any): void {
     throw new Error('Method not implemented.');
   }

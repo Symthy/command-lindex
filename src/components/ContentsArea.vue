@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import { CommandInfo } from "@/apps/model/CommandInfo";
+import { Options, Vue } from 'vue-class-component';
+import { CommandInfo } from '@/apps/model/CommandInfo';
 
 @Options({
   /* eslint-disable */

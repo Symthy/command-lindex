@@ -1,4 +1,3 @@
-
 // TODO: argument type
 export interface IStoreAccessor {
   insert(query: any): void;

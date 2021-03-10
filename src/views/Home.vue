@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import IndexList from "@/components/ContentsArea.vue"; // @ is an alias to /src
+import { Options, Vue } from 'vue-class-component';
+import IndexList from '@/components/ContentsArea.vue'; // @ is an alias to /src
 
 @Options({
   /* eslint-disable */

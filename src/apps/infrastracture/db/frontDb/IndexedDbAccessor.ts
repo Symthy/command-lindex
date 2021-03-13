@@ -1,27 +1,49 @@
-import { ExcludeMethods } from '@/apps/type';
+import { Category } from '@/apps/model/Category';
+import { Resource } from '@/apps/model/Resource';
+import { IStoreSearcher } from '../../IStoreSearcher';
 import { IStoreAccessor } from '../../IStoreUpdater';
-import { DexieDb } from './DexieDb';
+import { ModelType } from '../../ModelTypes';
+import { StoreAdapter } from './DexieDb';
 
-type DbType = ExcludeMethods<DexieDb>;
+export class IndexedDBAccessor implements IStoreAccessor, IStoreSearcher {
+  private db: IStoreAccessor & IStoreSearcher;
 
-export class IndexedDBAccessor implements IStoreAccessor {
-  private db: DbType;
   constructor();
-  constructor(db: DbType);
-  constructor(db?: DbType) {
+  constructor(db: IStoreAccessor & IStoreSearcher);
+  constructor(db?: IStoreAccessor & IStoreSearcher) {
     if (db) {
       this.db = db;
     }
-    this.db = new DexieDb();
+    this.db = new StoreAdapter();
   }
 
-  insert(query: any): void {
-    this.db.resources.put(query);
+  insert(model: ModelType): void {
+    if (model.create_at === undefined) {
+      model.registerCreateTime();
+    }
+    this.db.insert(model);
   }
-  update(query: any): void {
-    this.db.resources.update(0, query);
+  update(model: ModelType): void {
+    if (model.update_at === undefined) {
+      model.registerUpdateTime();
+    }
+    this.db.update(model);
   }
-  delete(query: any): void {
-    this.db.resources.delete(query);
+  delete(model: ModelType): void {
+    this.db.delete(model);
+  }
+
+  findResource(model: Partial<Resource>): Promise<Resource> {
+    return this.db.findResource(model);
+  }
+  findResourceAll(): Promise<Resource[]> {
+    return this.db.findResourceAll();
+  }
+
+  findCategory(model: Partial<Category>): Promise<Category> {
+    return this.db.findCategory(model);
+  }
+  findCategoryAll(): Promise<Category[]> {
+    return this.db.findCategoryAll();
   }
 }

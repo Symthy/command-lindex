@@ -1,6 +1,9 @@
-import { ModelType } from './ModelTypes';
+import { Category } from '../model/Category';
+import { Resource } from '../model/Resource';
 
 export interface IStoreSearcher {
-  find<T extends ModelType>(type: T): T;
-  findAll<T extends ModelType>(type: T): T[];
+  findResource(model: Partial<Resource>): Promise<Resource>;
+  findResourceAll(): Promise<Resource[]>;
+  findCategory(model: Partial<Category>): Promise<Category>;
+  findCategoryAll(): Promise<Category[]>;
 }
